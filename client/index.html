@@ -3,11 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>GifField</title>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script> -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
   <script src="/config.js"></script>
 </head>
-<body ng-controller="mainController">
-  <p>{{ name }}</p>
+
+<body ng-controller="mainController" >
+  
+  <ul id="messages"></ul>
+
+    <input id="m" autocomplete="off" /><button id="clicker">Send</button>
+
+
+  <script>
+    var socket = io();
+    $('#clicker').click(function(){
+      console.log('this form sbmited');
+      socket.emit('chat message', $('#m').val());
+      $('#m').val('');
+      return false;
+    });
+    socket.on('chat message', function(msg){
+      $('#messages').append($('<li>').text(msg));
+    });
+  </script>
 </body>
 </html>
