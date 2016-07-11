@@ -1,47 +1,76 @@
-/* ### Player Template ### */
-
-
-/*Inner window layout*/
-
-.windowImg {
-    margin-left: 35px;
+body {
+    font-family: sans-serif, helvetica;
+    height: 100%;
+    width: 100%;
+    background: #212121;
 }
 
-.chats {
+
+/*MUSIC PLAYER*/
+
+
+/*App title*/
+
+.appTitle {
+    font-size: 10em;
+    font-family: arial;
+    font-weight: bold;
+    color: white;
+    margin-top: 5%;
+    padding-left: -40%;
+    /*border: 1px solid #ff5419;*/
+    background: none;
+}
+
+
+/*Outer Page Layout*/
+
+.fullPage {
     position: absolute;
-    margin-left: 70%;
-
+    width: 100%;
+    height: 100%;
 }
 
 
-/*Outer window layout*/
+/*Player settings*/
 
 .player {
     margin-top: 5%;
-    border: 1px solid #E6EE9C;
-    width: 96%;
+    margin-left: 1%;
+    border-bottom: 1px solid #ff5419;
+    width: 50%;
     height: 700px;
     background: #F0F4C3;
-    margin-left: 2%;
+    background: rgba(0, 0, 0, 0.18);
 }
 
-
-/*Song Cover*/
-
-.songCover {
-    display: block;
-    height: 350px;
-    width: 600px;
-    border: 1px solid orange;
+img {
+    vertical-align: middle;
+    padding: 2%;
+    width: 100%;
+    height: 70%;
+    background-color: rgba(41, 49, 41, 0.23);
+    border-bottom: 1px solid #ff5419;
     border-radius: 3px;
 }
 
-.controls {
+
+/*.playListBorder {
+    margin-top: 1%;
     width: 600px;
+    border-bottom: 1px solid #ff5419;
+    padding-bottom: 100px;
+    background: rgba(0, 0, 0, 0.63);
+}*/
+
+
+/*CHAT SYSTEM*/
+
+.chats {
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 52%;
 }
-
-
-/*chat pretties here*/
 
 .chatUserSubmit {
     background: #80ccff;
@@ -59,8 +88,11 @@
     height: 300px;
     overflow: auto;
     background: rgba(0, 0, 0, 0.63);
+    padding: 100%;
+    margin-right: 1%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
-
 
 .message {
     border: 1px;
@@ -70,94 +102,7 @@
     font-size: 1em;
     font-color: #80ccff;
     color: white;
+    height: 70%;
     list-style-type: none;
     background: rgba(0, 0, 0, 0.63);
-}
-
-
-/*Button Wrapper*/
-
-.btnWrapper {
-    background: rgba(0, 0, 0, 0.63);
-    border-radius: 3px;
-    border-bottom: 1px solid #ff5419;
-    width: 600px;
-    height: 100px;
-}
-
-
-/*Button Color*/
-
-.buttonColor {
-    margin-left: 4%;
-    color: white;
-}
-
-
-/*Volume settings*/
-
-.volume {
-    margin-left: 80%;
-    margin-top: 30px;
-    border-radius: 100%;
-    background: #312b2b;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    padding: 4px 8px 4px 8px;
-    border-bottom: 1px solid #ff5419;
-}
-
-
-/*Show Play or Pause icon manipulation*/
-
-.fa-play:before {
-    margin-left: 10px;
-    content: "\f04b";
-}
-
-.fa-pause:before {
-    margin-left: 6px;
-    content: "\f04c";
-}
-
-
-/*Player Settings*/
-
-.showPlay,
-.showPause {
-    /*    position: fixed;
-*/
-    margin-top: 18px;
-    border-radius: 100%;
-    border-bottom: 1px solid #ff5419;
-    margin-left: 20px;
-    padding: 10px;
-    width: 70px;
-    background: #312b2b;
-}
-
-
-/*Playlist*/
-
-.innerPlayList {
-    color: white;
-    font-family: arial-black;
-}
-
-.playListBorder {
-    margin-top: 1%;
-    width: 600px;
-    border-bottom: 1px solid #ff5419;
-    padding-bottom: 100px;
-    background: rgba(0, 0, 0, 0.63);
-}
-
-
-/*Volume*/
-
-.showFullVolume,
-.showMidVolume,
-.showMuteVolume {
-    position: fixed;
 }
