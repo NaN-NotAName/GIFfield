@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="giffieldapp">
+<html lang="en" ng-app="MusicPlayer">
+
 <head>
-  <meta charset="UTF-8">
-  <title>GifField</title>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js'></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-  <script src="/config.js"></script>
+    <meta charset="UTF-8">
+    <title>GifField</title>
+    <!-- Socket IO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Angular -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+    <!-- Angular-route -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <!-- SoundManager2 -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/soundmanager2/2.97a.20150601/script/soundmanager2.js"></script>
+    <!-- Modules -->
+    <script src="modules/app.js"></script>
+    <!-- Controllers -->
+    <script src="controllers/HomeController.js"></script>
+
+    <script src="//connect.soundcloud.com/sdk.js"></script>
 </head>
 
-<body ng-controller="mainController" >
-  
-  <ul id="messages"></ul>
+<body>
 
-    <input id="m" autocomplete="off" /><button id="clicker">Send</button>
-
-
-  <script>
-    var socket = io();
-    $('#clicker').click(function(){
-      console.log('this form sbmited');
-      socket.emit('chat message', $('#m').val());
-      $('#m').val('');
-      return false;
-    });
-    socket.on('chat message', function(msg){
-      $('#messages').append($('<li>').text(msg));
-    });
-  </script>
+    <!-- Single View -->
+    <div ng-view></div>
 </body>
+
 </html>
